@@ -7,7 +7,8 @@ angular.module('hangularApp', [
     'hangularApp.filters',
     'hangularApp.services',
     'hangularApp.directives',
-    'hangularApp.controllers'
+    'hangularApp.controllers',
+    'ui.bootstrap'
 ]).
    config(['$routeProvider', function($routeProvider) {
            $routeProvider.when('/', {templateUrl: 'partials/hangman.html', controller: 'HangularCtrl'});

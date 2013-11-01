@@ -3,61 +3,52 @@
 <div class="container">
   <div class="jumbotron text-center">
     <h2 class="hangman-title">Hangularman</h2>
-    <p>A little implementation of the Hangman Game using AngularJS and Bootstrap3</p>
+    <p>Implementing the Hangman Game using AngularJS and Bootstrap3</p>
   </div>
-  
+
   <div class="panel panel-default text-center hangman-text">
     {{gui.hiddenSearchterm}} / {{gui.searchterm}}
   </div>
-  
+
   <div class="row">
     <div class="col-md-4">
       <div class="text-center">
-        <img ng-src="{{gui.images[1].path}}" alt="{{gui.images[1].path}}" class="img-thumbnail hangman-img"/>
+        <img ng-src="{{gui.currentImage.path}}" alt="{{gui.currentImage.path}}" class="img-thumbnail hangman-img"/>
       </div>
     </div>
-    <div class="col-md-8">
-      <div class="text-center hangman-btn">
-        <a class="btn btn-primary btn-lg">A</a> 
-        <a class="btn btn-primary btn-lg">B</a> 
-        <a class="btn btn-primary btn-lg">C</a> 
-        <a class="btn btn-primary btn-lg">D</a> 
-        <a class="btn btn-primary btn-lg">E</a> 
-        <a class="btn btn-primary btn-lg">F</a> 
-        <a class="btn btn-primary btn-lg">G</a> 
+    <div class="col-md-8 text-center">
+      <div>
+        <button ng-repeat="button in gui.buttons1"
+                ng-disabled="!button.enabled"
+                ng-click="gui.buttonClicked(button)"
+                class="btn btn-primary btn-lg  hangman-btn">
+          {{button.char}}
+        </button>          
       </div>
-      <div class="text-center hangman-btn">
-        <a class="btn btn-primary btn-lg">H</a> 
-        <a class="btn btn-primary btn-lg">I</a> 
-        <a class="btn btn-primary btn-lg">J</a> 
-        <a class="btn btn-primary btn-lg">K</a> 
-        <a class="btn btn-primary btn-lg">L</a> 
-        <a class="btn btn-primary btn-lg">M</a> 
+      <div>
+        <button ng-repeat="button in gui.buttons2"
+                ng-disabled="!button.enabled"
+                ng-click="gui.buttonClicked(button)"
+                class="btn btn-primary btn-lg  hangman-btn">
+          {{button.char}}
+        </button>          
       </div>
-      <div class="text-center hangman-btn">
-        <a class="btn btn-primary btn-lg">N</a> 
-        <a class="btn btn-primary btn-lg">O</a> 
-        <a class="btn btn-primary btn-lg">P</a> 
-        <a class="btn btn-primary btn-lg">Q</a> 
-        <a class="btn btn-primary btn-lg">R</a> 
-        <a class="btn btn-primary btn-lg">S</a> 
-        <a class="btn btn-primary btn-lg">T</a> 
+      <div>
+        <button ng-repeat="button in gui.buttons3"
+                ng-disabled="!button.enabled"
+                ng-click="gui.buttonClicked(button)"
+                class="btn btn-primary btn-lg  hangman-btn">
+          {{button.char}}
+        </button>          
       </div>
-      <div class="text-center hangman-btn">
-        <a class="btn btn-primary btn-lg">U</a> 
-        <a class="btn btn-primary btn-lg">V</a> 
-        <a class="btn btn-primary btn-lg">W</a> 
-        <a class="btn btn-primary btn-lg">X</a> 
-        <a class="btn btn-primary btn-lg">Y</a> 
-        <a class="btn btn-primary btn-lg">Z</a> 
+      <div>
+        <button ng-repeat="button in gui.buttons4"
+                ng-disabled="!button.enabled"
+                ng-click="gui.buttonClicked(button)"
+                class="btn btn-primary btn-lg  hangman-btn">
+          {{button.char}}
+        </button>          
       </div>
     </div>
-  </div>
 
-  <div class="alert alert-success text-center hangman-msg">
-    <h4>
-      Congratulations! You won! Play again? 
-      <a class="btn btn-success btn-sm">OK</a>
-    </h4>
   </div>
-</div>
