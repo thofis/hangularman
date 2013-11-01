@@ -38,7 +38,8 @@ angular.module('hangularApp.controllers', []).
                       showDialog(wonMsg);
                   }
                   if (gameState.isGameLost()) {
-                      var lostMessage = "What a shame! You lost!";
+                      var lostMessage = "You lost! Solution: "+$scope.gui.searchterm;
+                      $scope.gui.hiddenSearchterm = $scope.gui.searchterm;
                       console.log(lostMessage);
                       showDialog(lostMessage);
                   }
@@ -110,8 +111,8 @@ angular.module('hangularApp.controllers', []).
                $modalInstance.close();
            };
 
-           $scope.cancel = function() {
-               $modalInstance.dismiss('cancel');
-           };
+//           $scope.cancel = function() {
+//               $modalInstance.dismiss('cancel');
+//           };
 
        }]);
